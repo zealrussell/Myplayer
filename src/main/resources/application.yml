@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  #servlet:
+    #context-path: /musicplayer/
+  servlet:
+    encoding:
+      charset: utf-8
+      enabled: true
+
+spring:
+  resources:
+    static-locations: classpath:/resources,classpath:/static,classpath:/templates
+  #static-locations: [classpath:/resources/**,classpath:/static/**,classpath:/templates/,classpath:/config/]
+  #thymeleaf
+  thymeleaf:
+    suffix: .html
+    prefix: classpath:/templates/
+    mode: HTML
+    cache: false
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/musicplayer?serverTimezone=GMT%2B8&useSSL=true
+    username: root
+    password: 123
+
+mybatis:
+  #mapper配置文件
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.zeal.musicplayer.pojo
+  #开启驼峰命名
+  configuration:
+    map-underscore-to-camel-case: true

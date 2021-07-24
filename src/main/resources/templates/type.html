@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org"  lang="en">
+<head>
+    <title>Type</title>
+    <style type="text/css">
+        #pbtn{
+            width: 60px;
+            height: 30px;
+            border-radius: 10px;
+            background: skyblue;
+        }
+        #cbtn{
+            width: 60px;
+            height: 30px;
+            border-radius: 10px;
+            background: skyblue;
+        }
+        #dbtn{
+            width: 60px;
+            height: 30px;
+            border-radius: 10px;
+            background: skyblue;
+        }
+        #search-sub{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            font-size: 12px;
+            line-height: 1.428571429;
+            border-radius: 15px;
+
+            float:left;
+            background-color: whitesmoke;
+            border: 1px solid #d5d5d5;
+        }
+    </style>
+    <link  rel="stylesheet"  th:href="@{/css/fenlei.css}">
+    <link  rel="stylesheet"  th:href="@{/fonts/font-awesome-4.7.0/css/font-awesome.css}">
+    <link  rel="stylesheet"  th:href="@{/fonts/iconfont.css}">
+</head>
+
+<body>
+
+    <div id="header" th:include="header :: common_header" >  </div>
+
+    <div class="middle">
+        <!--LEFT-->
+        <div class="content_left">
+            <div class="content_left1">
+                <img th:src="@{/img/hp.jpg}" >
+            </div>
+            <div align="center" class="content_left2">name</div>
+
+        </div>
+        <!--RIGHT-->
+        <div class="content_right">
+            <div>
+                <div class="list_title">
+                    <div class="fenlei"><th>歌手</th></div>
+                </div>
+                <div class="listSong" th:each="singer:${slist}">
+                        <div class="ls2">
+                            <a th:href="@{'cclassify?sid='+${singer.id} }" th:text="${singer.name}"> </a>
+                        </div>
+                </div>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

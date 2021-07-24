@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.zeal.musicplayer.dao.MusicMapper">
+
+    <select id="queryAllMusic" resultType="com.zeal.musicplayer.pojo.Music">
+        select * from musicplayer.music;
+    </select>
+
+    <select id="queryByName" resultType="com.zeal.musicplayer.pojo.Music">
+        select * from musicplayer.music where name like concat(concat("%",#{name}),"%")
+    </select>
+
+    <select id="queryCollect" parameterType="int" resultType="com.zeal.musicplayer.pojo.Music">
+        SELECT * FROM music INNER JOIN collect on music.id=collect.musicid and collect.userid=#{id};
+    </select>
+
+    <insert id="addCollect"  parameterType="com.zeal.musicplayer.pojo.Collect">
+        insert into collect values(#{userid},#{musicid})
+    </insert>
+
+    <delete id="deleteCollect" parameterType="com.zeal.musicplayer.pojo.Collect">
+        delete from collect where  userid=#{userid} and musicid = #{musicid}
+    </delete>
+
+    <select id="queryAllSinger" resultType="com.zeal.musicplayer.pojo.Type">
+        select distinct id,name from singer;
+    </select>
+
+    <select id="queryBySinger" resultType="com.zeal.musicplayer.pojo.Music">
+       SELECT * FROM music INNER JOIN singer on music.id=singer.musicid and singer.id=#{id};
+    </select>
+</mapper>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Error</title>
+</head>
+<body>
+    <div>
+        <div th:utext="'FailedRequsetURL:'+{requesturl}"></div>
+        <div th:utext="'Exception:'+{exception.message}"></div>
+    </div>
+</body>
+</html>
