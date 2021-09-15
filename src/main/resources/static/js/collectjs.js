@@ -24,7 +24,7 @@ function fcollect(which){
     console.log(btn.val());
     $.ajax({
         type:"post",
-        url:"ccoloperation",
+        url:"/c/ccoloperation",
         data:{act:btn.text(),musicid:btn.val()},
         success:function (data) {
             if (data==="add"){

@@ -15,7 +15,7 @@ function log(){
         data:$('.login-form').serialize(),
         success:function (data){
             if (data=="codeerror") alert("验证码错误！");
-            else if(data=="success") window.location.href="cmain";
+            else if(data=="success") window.location.href="/c/cmain";
             else alert("用户名或密码错误！");
         }
     })
@@ -29,7 +29,7 @@ function reg(){
         data:$('.register-form').serialize(),
         success:function (data){
             if (data=="error") alert("用户已存在！");
-            else if(data=="success") window.location.href="hello";
+            else if(data=="success") window.location.href="/c/hello";
             else alert("用户名或密码错误！");
         }
     })

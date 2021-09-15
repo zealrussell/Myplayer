@@ -113,7 +113,7 @@ public class MusicController {
         JSON musicjson = (JSON) JSONArray.toJSON(musicList);
         model.addAttribute("mlist",musicList);
         model.addAttribute("mjson",musicjson);
-        return "collect";
+        return "collection";
     }
 
     //收藏操作

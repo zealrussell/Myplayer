@@ -16,7 +16,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 public class WevConfig implements WebMvcConfigurer {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/").setViewName("forward:/login.html");
+        registry.addViewController("/").setViewName("forward:/c/hello");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
     }
 }
